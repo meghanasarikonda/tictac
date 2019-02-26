@@ -8,4 +8,4 @@ const initialState = {
   tie: false
 }
 
-const store = crateStore(reducer, initialState)
+export const store = createStore(reducer, initialState)

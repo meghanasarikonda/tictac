@@ -10,11 +10,11 @@ class DisplayBoard extends Component {
   render() {
     return(
       <div>
-        {this.props.tie? 
-          <div>Match is a tie!</div> 
+        {this.props.winner ? 
+          <div>Winner is {this.props.winner}</div>
           : 
-          this.props.winner ? 
-            <div>Winner is {this.props.winner}</div>
+          this.props.tie? 
+            <div>Match is a tie!</div> 
             : 
             this.props.player ? 
               <div>Current Player - {this.props.player}</div>
