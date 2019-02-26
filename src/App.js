@@ -6,15 +6,7 @@ import { setPlayer, setWinner, setTie, setReload, paintGrid } from './actions/in
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-
-    }
-  }
-
   checkWinner() {
-
     let winnerPairs = [
       [0, 1, 2],
       [3, 4, 5],
@@ -25,19 +17,16 @@ class App extends Component {
       [1, 4, 7],
       [2, 5, 8]
     ];
-
     this.MatchCoordinates(winnerPairs);
   }
 
   isMatchTie() {
     if (this.props.grid.includes(null) === false) {
-      console.log('its a tie')
       this.props.setTie(true)
     }
   }
 
   MatchCoordinates(winnerPairs) {
-
     for (let i = 0; i < winnerPairs.length; i++) {
       let grid = this.props.grid;
       const [x, y, z] = winnerPairs[i];
@@ -46,11 +35,9 @@ class App extends Component {
         this.props.setWinner(winner);
       }
     }
-
   }
 
   handleBoxClick(index) {
-
     if(!this.props.grid[index] && !this.props.winner) {
       let newGrid = this.props.grid;
       newGrid[index] = this.props.player;
@@ -58,7 +45,6 @@ class App extends Component {
       this.checkWinner();
       this.isMatchTie();
     }
-
   }
 
   setPlayer(player) {
@@ -71,7 +57,6 @@ class App extends Component {
 
 
   render() {
-    console.log('this.props.winner', this.props.tie)
     return (
       <div className="App">
         <h1>Tie Tac Toe</h1>

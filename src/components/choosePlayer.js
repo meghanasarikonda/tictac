@@ -4,7 +4,6 @@ class ChoosePlayer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target.player.value);
     this.props.setPlayer(e.target.player.value);
 
   }
@@ -24,7 +23,6 @@ class ChoosePlayer extends Component {
       </div>
     )
   }
-
 }
 
 export default ChoosePlayer;
