@@ -23,6 +23,7 @@ class App extends Component {
   isMatchTie() {
     if (this.props.grid.includes(null) === false) {
       this.props.setTie(true)
+      alert(`Its a tie!`)
     }
   }
 
@@ -33,6 +34,8 @@ class App extends Component {
       if (grid[x] && grid[x] === grid[y] && grid[y] === grid[z]) {
         let winner = this.props.player
         this.props.setWinner(winner);
+        if (!this.props.winner) 
+          alert(`${winner} won`)
       }
     }
   }
